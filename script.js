@@ -11,6 +11,10 @@ let rowHeight = SQUARES_CONTAINER_SIDE_LENGTH_REM / numSquaresPerSide;
 
 // function element references
 const squaresContainer = findAndUpdateSquaresContainerDiv();
+// squaresContainer.onmouseover = () => updateSquareBackgroundColor(square, drawColor);
+squaresContainer.onmouseover = (e) => {
+  updateSquareBackgroundColor(e.target, drawColor);
+};
 
 // function to create a new SquaresContainer
 function createSquaresContainer(numSquares) {
@@ -20,7 +24,6 @@ function createSquaresContainer(numSquares) {
     let rowDiv = createRowDiv();
     for (let c = 0; c < numSquaresPerSide; c++) {
       let square = createSquareDiv();
-      square.onmouseover = () => updateSquareBackgroundColor(square, drawColor);
       rowDiv.appendChild(square);
     }
     squaresContainer.appendChild(rowDiv);

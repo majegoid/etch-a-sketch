@@ -20,7 +20,7 @@ function createSquaresContainer(numSquares) {
     let rowDiv = createRowDiv();
     for (let c = 0; c < numSquaresPerSide; c++) {
       let square = createSquareDiv();
-      square.addEventListener('mouseover', () => updateSquareBackgroundColor(square, drawColor));
+      square.onmouseover = () => updateSquareBackgroundColor(square, drawColor);
       rowDiv.appendChild(square);
     }
     squaresContainer.appendChild(rowDiv);
